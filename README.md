@@ -45,14 +45,6 @@ ansible-playbook -i inventory.ini playbook.yml --vault-password-file .vault_pass
 
 ```
 .
-├── playbook.yml
-├── vault.yaml
-├── tasks/
-│   ├── install_docker.yaml
-│   └── immich.yaml
-└── inventory.ini
-
-.
 ├── inventory.ini
 ├── main.yaml
 ├── README.md
