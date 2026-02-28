@@ -1,0 +1,21 @@
+- name: Configure docker host
+  hosts: docker_host
+  become: true
+  pre_tasks:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600
+  vars_files:
+    - vault.yaml
+
+  tasks:
+    - name: Install docker
+      ansible.builtin.include_tasks: tasks/install_docker.yaml
+    - name: Install immich
+      ansible.builtin.include_tasks: tasks/immich.yaml
+
+  handlers:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: true
