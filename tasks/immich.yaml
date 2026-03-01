@@ -9,7 +9,7 @@
 
 - name: Deploy docker-compose.yml
   ansible.builtin.template:
-    src: immich_compose.yaml.j2
+    src: immich/immich_compose.yaml.j2
     dest: /home/{{ ansible_user }}/immich/compose.yaml
     owner: "{{ ansible_user }}"
     group: "{{ ansible_user }}"
@@ -17,7 +17,7 @@
 
 - name: Deploy immich env
   ansible.builtin.template:
-    src: immich_env.j2
+    src: immich/immich_env.j2
     dest: /home/{{ ansible_user }}/immich/.env
     owner: "{{ ansible_user }}"
     group: "{{ ansible_user }}"

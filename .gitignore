@@ -1,4 +1,0 @@
-ansible.cfg
-vars/vault.yaml
-.vscode
-.*
